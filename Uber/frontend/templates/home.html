@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+  /* Background image with overlay for the entire page */
+  body {
+    min-height: 100vh;
+    background: 
+      
+      url("{% static 'images/uh.jpg' %}") no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  /* Typography */
+  h1 {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    color: #e9ebee; /* Dark blue-gray */
+  }
+
+  p.lead {
+    font-size: 1.125rem;
+    color: #ede7e7;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+  }
+
+  .card {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: none;
+    background-color: #d5cece; /* White card background */
+  }
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+
+  .card img {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    object-fit: cover;
+    height: 180px;
+    width: 100%;
+  }
+
+  .card-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    color: #34495e;
+    text-align: center;
+    margin: 15px 0;
+  }
+
+  /* Center container */
+  .container-centered {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 0 15px;
+  }
+
+  /* Jumbotron style */
+  .jumbotron {
+    background-color: rgba(14, 13, 13, 0.85);
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(238, 235, 235, 0.1);
+    max-width: 800px;
+    margin: 40px auto 20px;
+  }
+
+  /* Responsive fix */
+  @media (max-width: 576px) {
+    .container-centered {
+      margin-top: 30px;
+      padding: 0 10px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card {
+      width: 100% !important;
+    }
+  }
+</style>
+
+<div class="jumbotron text-center">
+  <h1>Uber Data Analysis</h1>
+  <p class="lead">
+    Unlock insights from Uber's extensive ride data to optimize pricing, understand rider behavior, and improve driver earnings.
+    This platform offers intuitive data visualization, predictive analytics, and actionable recommendations tailored for business success.
+  </p>
+</div>
+
+<div class="container-centered">
+  <a href="{% url 'index' %}" style="width: 320px; text-decoration: none;">
+    <div class="card">
+      <img src="{% static 'images/b.avif' %}" alt="Uber Data Analysis">
+      <div class="card-body">
+        <h5 class="card-title">Start Your Analysis</h5>
+      </div>
+    </div>
+  </a>
+</div>
+
+{% endblock content %}

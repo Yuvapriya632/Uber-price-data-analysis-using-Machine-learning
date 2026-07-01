@@ -1,0 +1,108 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url("{% static 'images/usignup.jpg' %}") no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    form {
+      background-color: rgba(0, 0, 0, 0.7); /* semi-transparent for readability */
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      width: 320px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    label {
+      color: #ffffff;
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    p {
+      color: #ffffff;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    a {
+      color: #90c8ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="" method="post">
+    {% csrf_token %}
+
+    <h2>Sign Up</h2>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="username" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password1">Password:</label>
+    <input type="password" id="password1" name="password1" required>
+
+    <label for="password2">Confirm Password:</label>
+    <input type="password" id="password2" name="password2" required>
+
+    <button type="submit">Sign Up</button>
+
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+  </form>
+
+</body>
+</html>

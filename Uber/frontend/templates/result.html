@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Result</title>
+  
+  <!-- FontAwesome for icons -->
+  <script src="https://kit.fontawesome.com/47101d2035.js" crossorigin="anonymous"></script>
+  
+  <!-- Bootstrap for styling -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+      /* Background image */
+      background: url("{% static 'images/uin.jpg' %}") no-repeat center center fixed;
+      background-size: cover;
+      background-color: #625e5e; /* fallback */
+    }
+
+    .center-screen {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; /* stack content vertically */
+      padding: 20px;
+    }
+
+    .info-box {
+      background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+      border: 1px solid #030303;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      margin: 1rem;
+      width: 90%;
+      max-width: 800px;
+      text-align: center; /* center text */
+    }
+
+    .info-box img {
+      display: block;
+      margin: auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .info-box h2 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .info-box h1 {
+      font-size: 1.75rem;
+      color: #333;
+      margin: 0.5rem 0 1.5rem 0;
+      text-transform: uppercase;
+    }
+
+    .info-box .value {
+      font-size: 2rem;
+      font-weight: 500;
+      color: #007bff;
+    }
+
+    /* Button styles */
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-custom {
+      padding: 10px 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      color: white;
+      background-color: #e74c3c;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-custom:hover {
+      background-color: #c0392b;
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="center-screen">
+    <div class="info-box">
+      <h2>UBER</h2>
+      <img class="center" src="{% static 'images/a.avif' %}" alt="Notes image" width="500" height="500">
+      <h1>Your Tips Amount is <span class="value">{{ result }}</span></h1>
+
+      <div class="btn-container">
+        <a href="{% url 'home' %}" class="btn-custom">Home</a>
+        <a href="{% url 'index' %}" class="btn-custom">Predict Price Again</a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

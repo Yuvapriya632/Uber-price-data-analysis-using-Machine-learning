@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Uber</title>
+  <script src="https://kit.fontawesome.com/47101d2035.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+  <style>
+     body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 120vh;
+}
+
+
+    
+    .form-container {
+      width: 60%;
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for a card-like appearance */
+    }
+
+    .form-label {
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #34495e; /* Dark blue color */
+    }
+
+    h1 {
+      color: #f5f0f0; /* Dark purple color */
+      text-align: center;
+      font-weight: 500;
+      font-size: 50px;
+      text-transform: uppercase;
+    }
+
+    .form-control {
+      width: 100%;
+      margin-bottom: 10px;
+      position: relative;
+      left: 15px;
+    }
+
+    .btn-primary {
+      background-color: #e74c3c; /* Red color for the button */
+      border-color: #e74c3c;
+    }
+
+    .btn-primary:hover {
+      background-color: #c0092b; /* Darker red color on hover */
+      border-color: #c0392b;
+    }
+
+    .image-container {
+      width: 40%; /* Adjust the width of the image container */
+    }
+
+    .image-container img {
+      width: 100%; /* Make the image fill its container */
+      border-radius: 8px; /* Optional: add border radius to the image */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Uber Data Analysis</h1><br>
+    <div class="row justify-content-md-center">
+      <div class="col-md-8 form-container">
+        <form action="result">
+          {% csrf_token %}
+          <div class="form-group row">
+            <label for="age" class="col-sm-2 col-form-label form-label">Start_Date:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="age" placeholder="Start_Date :" name="Start_Date" required>
+            </div>
+          </div>
+      <div class="form-group row">
+        <label for="age" class="col-sm-2 col-form-label form-label">Start_Time:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="age" placeholder="Start_Time :" name="Start_Time" required>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label for="age" class="col-sm-2 col-form-label form-label">End_Date:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="age" placeholder="End_Date :" name="End_Date" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="age" class="col-sm-2 col-form-label form-label">End_Time:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="age" placeholder="End_Time :" name="End_Time" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="CATEGORY" class="col-sm-2 col-form-label form-label">CATEGORY :</label>
+        <div class="col-sm-10">
+            <select class="form-control" id="CATEGORY" name="CATEGORY" required>
+                <option value="">Select</option>
+                <option value="Business">Business</option>
+                <option value="Meal/Entertain">Personal</option>
+            </select>
+        </div>
+    </div>
+      <div class="form-group row">
+        <label for="age" class="col-sm-2 col-form-label form-label">START:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="age" placeholder="START :" name="START" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="age" class="col-sm-2 col-form-label form-label">STOP:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="age" placeholder="STOP :" name="STOP" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="age" class="col-sm-2 col-form-label form-label">Distance:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="age" placeholder="Distance :" name="Distance" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="purpose" class="col-sm-2 col-form-label form-label">PURPOSE:</label>
+        <div class="col-sm-10">
+            <select class="form-control" id="purpose" name="PURPOSE" required>
+                <option value="">Select</option>
+                <option value="Meeting">Meeting</option>
+                <option value="Meal/Entertain">Meal/Entertain</option>
+                <option value="Customer Visit">Customer Visit</option>
+                <option value="Errand/Supplies">Errand/Supplies</option>
+                <option value="Temporary Site">Temporary Site</option>
+                <option value="Airport/Travel">Airport/Travel</option>
+                <option value="Between Offices">Between Offices</option>
+                <option value="Moving">Moving</option>
+                <option value="Charity ($)">Charity ($)</option>
+                <option value="Commute">Commute</option>
+            </select>
+        </div>
+    </div>
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <button type="submit" class="btn btn-primary btn-lg btn-block">Predict</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
